@@ -1,0 +1,65 @@
+*{
+  box-sizing: border-box;
+}
+.feedContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: center;
+}
+.feedCard {
+  background-color: #F4F4F4;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 50px;
+  width: 300px;
+  transition: all 0.3s ease;
+  width: 70%;
+}
+.feedCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.feedCard h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.feedCard p {
+  margin: 5px 0;
+}
+.feedCard a {
+  text-decoration: none;
+  color: #F06B6B;
+}
+.feedCard .fa-map-marker-alt,
+.feedCard .fa-calendar-alt {
+  margin-right: 5px;
+}
+.feedCard form {
+  margin-top: 10px;
+}
+.btnGoing {
+  background-color: #F4F4F4;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  float: right;
+}
+.btnGoing:hover {
+  background-color: #F2C5C5;
+}
+@media (max-width: 800px) {
+  .feedCard {
+    width: 100%;
+  }
+}
+
+#feed-cards {
+  text-align: center;
+}

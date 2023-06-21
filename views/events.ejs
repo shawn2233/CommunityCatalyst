@@ -1,0 +1,119 @@
+<%- include('partials/head') -%>
+<link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<ul class="icons">
+						<li>
+						  <a href="https://twitter.com/resilientcoders" target="_blank" class="icon brands fa-twitter"><span
+							  class="label">Twitter</span></a>
+						</li>
+						<li>
+						  <a href="https://www.facebook.com/resilientcoders/" target="_blank"
+							class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+						</li>
+			
+						<li>
+						  <a href="https://www.instagram.com/resilientcoders/?hl=en" target="_blank"
+							class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+						</li>
+					  </ul>
+				</header>
+
+				<!-- Banner -->
+					<!-- Banner -->
+					<section id="banner">
+						<div class="content event-content">
+							<header id="event-header">
+								<h1><%- post.title -%><br />
+									<%- post.username -%></h1>
+								<p>When: <%- post.eventDate -%></p>
+								<p>Time: <%- post.time -%></p>
+							</header>
+						</div>
+						<span class="image object">
+				 <a href="https://www.google.com/maps/search/?api=1&query=<%= post.eventLocation %>" target="_blank">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= post.eventLocation %>&zoom=15&size=600x300&markers=color:red%7Clabel:A%7C<%= post.eventLocation %>&key=AIzaSyB4YGxGK5iXbhZLd1y01bPwy5vYLTwHO2k"></a>
+						</span>
+					</section>
+
+				<!-- Section -->
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2 id="event-h2">About This Event</h2>
+					</header>
+					<div class="posts event-post">
+						<article>
+							<img src="<%- post.image %>">
+							<p>
+								<%- post.caption -%>
+							</p>
+						</article>
+					</div>
+				</section>
+				<%if(post.user==user.id){ %>
+					<form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
+						<button class="btn btn-primary fa fa-trash">Delete Post</button>
+					</form>
+					<%}%>
+			</div>
+		</div>
+
+		<div id="sidebar">
+			<div class="inner">
+	
+					<!-- Search -->
+					<!-- <section id="search" class="alt">
+									<form method="post" action="#">
+											<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+							</section> -->
+	
+					<!-- Menu -->
+					<nav id="menu">
+							<header class="major">
+									<h2>Menu</h2>
+							</header>
+							<ul>
+									<li><a href="/feed">Home</a></li>
+									<li><a href="/profile">Profile</a></li>
+									<li><a href="/cal">Calendar</a></li>
+									<li><a href="/logout" class="col-3 btn btn-primary">Logout</a></li>
+					</nav>
+					<section>
+            <header class="major">
+                <h2>Get in Touch</h2>
+            </header>
+            <p>Introducing Community Catalyst, the groundbreaking app that revolutionizes community 
+                empowerment for the black and brown community. Seamlessly connect, organize, 
+                and drive impactful change like never before. Discover a vibrant hub of activism and 
+                unwavering support, fostering connections with like-minded individuals and 
+                organizations. <br><br>Engage in powerful conversations, share vital information, 
+                and effortlessly coordinate transformative events. Unlock access to invaluable 
+                resources and funding opportunities, igniting your mission and amplifying your 
+                voice to create lasting impact.</p>
+            <ul class="contact">
+                <li class="icon solid fa-envelope"><a href="#">info@resilientcoders.org</a></li>
+                <li class="icon solid fa-home">1 Broadway, 11th floor,<br />
+                    Cambridge, MA 02142
+                </li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; Resilient Coders: Community Catalyst</p>
+            <p><a href="https://www.resilientcoders.org/">Connect With Us</a></p>
+        </footer>
+			<%- include('partials/scripts') -%>

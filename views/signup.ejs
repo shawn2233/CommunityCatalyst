@@ -1,0 +1,90 @@
+<%- include('partials/head') -%>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+		<script src="https://kit.fontawesome.com/4c83b50b1e.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<ul class="icons">
+						<li>
+						  <a href="https://twitter.com/resilientcoders" target="_blank" class="icon brands fa-twitter"><span
+							  class="label">Twitter</span></a>
+						</li>
+						<li>
+						  <a href="https://www.facebook.com/resilientcoders/" target="_blank"
+							class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+						</li>
+			
+						<li>
+						  <a href="https://www.instagram.com/resilientcoders/?hl=en" target="_blank"
+							class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+						</li>
+					  </ul>
+				</header>
+
+				<!-- Content -->
+				<section>
+					<header class="main">
+						<h1>Signup</h1>
+					</header>
+
+					<!-- Content -->
+					<h2 id="content"></h2>
+					<main class="container">
+						<div class="row justify-content-center">
+							<section class="col-6 mt-5">
+								<% if (locals.messages.errors) { %>
+														<% messages.errors.forEach( el => { %>
+															<div class="alert alert-danger"><%= el.msg %></div>
+														<% }) %>    
+													<% } %>
+													<% if (locals.messages.info) { %>
+														<% messages.info.forEach( el => { %>
+															<div class="alert alert-info"><%= el.msg %></div>
+														<% }) %>    
+													<% } %>
+								<form action="/signup" method="POST">
+									<div class="mb-3">
+										<label for="userName" class="form-label">User Name</label>
+										<input type="text" class="form-control" style = "width: 90%" id="userName" name="userName">
+									</div>
+									<div class="mb-3">
+										<label for="exampleInputEmail1" class="form-label">Email address</label>
+										<input type="email" class="form-control" style = "width: 90%" id="exampleInputEmail1"
+											aria-describedby="emailHelp" name="email">
+										<div id="emailHelp" class="form-text">We'll never share your email with anyone
+											else.</div>
+									</div>
+									<div class="mb-3">
+										<label for="password" class="form-label">Password</label>
+										<input type="password" class="form-control" style = "width: 90%" id="password" name="password">
+									</div>
+									<div class="mb-3">
+										<label for="confirmPassword" class="form-label">Confirm Password</label>
+										<input type="password" class="form-control" style = "width: 90%" id="confirmPassword"
+											name="confirmPassword">
+									</div>
+									<button type="submit" class="button primary">Signup</button>
+									<a href="/login" class="button primary">Go Back To Login</a>
+								</form>
+							</section>
+						</div>
+					</main>
+
+
+
+					<!-- Elements -->
+					<!--  -->
+
+          <%- include('partials/scripts') -%>
